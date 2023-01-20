@@ -8,6 +8,7 @@ const Section = ({title, children}) => <SectionCss>
 
 Section.propTypes = {
     title: PropTypes.string.isRequired,
+    children: PropTypes.array.isRequired
 }
 
 export default Section;
