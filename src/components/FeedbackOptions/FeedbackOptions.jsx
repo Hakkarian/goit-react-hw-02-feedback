@@ -8,7 +8,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <>
     <FeedbackUlCss>
       {options.map((option) => (
-        <li key={nanoid()}>
+        <li key={option.toString()}>
           <FeedbackItem option={option} onLeaveFeedback={onLeaveFeedback} />
         </li>
       ))}
@@ -17,10 +17,9 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => (
 );
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf({
-    option: PropTypes.string.isRequired,
-    onLeaveFeedback: PropTypes.func.isRequired,
-  }),
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
 
 };
 export default FeedbackOptions;
